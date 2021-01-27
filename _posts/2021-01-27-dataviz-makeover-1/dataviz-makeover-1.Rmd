@@ -193,7 +193,7 @@ In 2009, residents aged 35-39 have the most number of residents in labour force 
 
 **2. Baby boomers - Spike in population aged 55 and above** 
 
-There is a substantial increase in residents in labour force above age 55 due to 2 reasons
+There is a substantial increase in residents in labour force above age 55 due to 2 reasons:
 
 - Increase in RLFR as compared to 2009 as supported by 2nd visualization  
 - Spike in population, with baby boomers born between 1947 to 1964 who are aged 55 and above in 2019.
@@ -201,5 +201,4 @@ There is a substantial increase in residents in labour force above age 55 due to
 **3. Entering workforce at a later age**
 
 In 2009, the population cohort of 25-29 has the highest RLPR whereas in 2019, the population cohort of 30-34 has the highest RLPR instead. This implies that the average age to enter workforce in Singapore has increased, probably due to additional years of education.
-
 
