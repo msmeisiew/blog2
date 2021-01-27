@@ -1,5 +1,5 @@
 ---
-title: "VIZ"
+title: "Mei Siew Data Viz Blog"
 site: distill::distill_website
 listing: posts
 ---

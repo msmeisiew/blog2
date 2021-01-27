@@ -1,7 +1,7 @@
 name: "blog2"
-title: "VIZ"
+title: "Mei Siew DataViz Blog"
 description: |
-  VIZ
+  Everything on Visual Analytics
 output_dir: "_site"
 navbar:
   right:
