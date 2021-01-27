@@ -8,7 +8,9 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "DataViz Makeover"
-      href: dataviz.html
+      menu:
+        - text: "DataViz Makeover 1"
+          href: posts/2021-01-27-dataviz-makeover-1/
     - text: "Visual Analytics Project"
       href: vap.html
     - text: "About"
