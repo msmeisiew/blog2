@@ -187,9 +187,9 @@ knitr::include_graphics("15-Viz4final.png")
 
 #  5.0 Major Observations
 
-**1. Later retirement age**
+**1. Increase in labour force for aged 45-49**
 
-In 2009, residents aged 35-39 have the most number of residents in labour force whereas in 2019, residents aged 45-49.  This is the same population cohort that moved across age-band after 10 years. Comparing the population cohorts between age 35 to 49  in 2009 and the population cohorts between age 45 to 59 in 2019, there is minimum reduction in residents per population cohort. This suggests this population cohort retire at a later age, as compared to 2009. 
+Based on Visualization 3, in 2009, residents aged 35-39 have the most number of residents in labour force whereas in 2019, residents aged 45-49.  This is the same population cohort that moved across age-band after 10 years. Interesting, this cohort increases in size as well as RLPR (based on Visualization 2), suggesting either an increase in new working residents or an increase of residents re-entering workforce or both.
 
 **2. Baby boomers - Spike in population aged 55 and above** 
 
