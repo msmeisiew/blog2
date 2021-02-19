@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Dataviz Makeover 2</title>
+  
+  <meta property="description" itemprop="description" content="This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker"/>
+  
+  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-02-17"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-02-17"/>
+  <meta name="article:author" content="Mei Siew Toh"/>
+  
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Dataviz Makeover 2"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker"/>
+  <meta property="og:locale" content="en_US"/>
+  
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Dataviz Makeover 2"/>
+  <meta property="twitter:description" content="This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker"/>
+  
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Dataviz Makeover 2"]},{"type":"character","attributes":{},"value":["This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Mei Siew Toh"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/mei-siew-toh/"]}]}]},{"type":"character","attributes":{},"value":["02-17-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["dataviz-makeoever-2_files/anchor-4.2.2/anchor.min.js","dataviz-makeoever-2_files/bowser-1.9.3/bowser.min.js","dataviz-makeoever-2_files/distill-2.2.21/template.v2.js","dataviz-makeoever-2_files/jquery-1.11.3/jquery.min.js","dataviz-makeoever-2_files/popper-2.6.0/popper.min.js","dataviz-makeoever-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeoever-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeoever-2_files/tippy-6.2.7/tippy.css","dataviz-makeoever-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeoever-2_files/webcomponents-2.0.0/webcomponents.js","images/1-OriginalData.jpg","images/10-Score.jpg","images/11-Marks.jpg","images/12-Columns.jpg","images/13-Null.jpg","images/14-Legend.jpg","images/15-Color.jpg","images/16-Reference.jpg","images/17-Final.jpg","images/18-Title.jpg","images/19-Final.jpg","images/2-Draft.jpg","images/20-Animation.jpg","images/21-Percentage.jpg","images/22-Marks.jpg","images/23-Graph.jpg","images/24-Group.jpg","images/25-Agegroup.jpg","images/26-Code.jpg","images/27-Pivot.jpg","images/28-Code.jpg","images/29-Pivot.jpg","images/3-Getdata.jpg","images/30-Group.jpg","images/31-Parameter.jpg","images/32-Calculated.jpg","images/33-Bar.jpg","images/34-Title.jpg","images/35-Graph.jpg","images/36-Confidence.jpg","images/37-Plot.jpg","images/38-Dual.jpg","images/39-Axis.jpg","images/4-Sourcedata.jpg","images/40-Marks.jpg","images/41-Marks.jpg","images/42-Graph.jpg","images/43-Graph.jpg","images/44-Date.jpg","images/45-Day.jpg","images/46-True.jpg","images/47-True.jpg","images/48-Reference.jpg","images/49-Reference.jpg","images/5-Filterdata.jpg","images/50-Parameter.jpg","images/51-Parameter.jpg","images/52-Tooltip.jpg","images/53-Filter.jpg","images/54-slider.jpg","images/55-Graph.jpg","images/56-Title.jpg","images/57-Title.jpg","images/58-Header.jpg","images/59-Color.jpg","images/6-Tableau.jpg","images/7-Pivot.jpg","images/8-Pivot.jpg","images/9-Newdata.jpg","images/Insight1.1.jpg","images/Insight1.2.jpg","images/Insight2.jpg","images/Insight3.1.jpg","images/Insight3.2.jpg","images/Insight3.3.jpg","images/Insight4-Canada.jpg","images/Insight4-Japan.jpg"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+  
+  <style type="text/css">
+  
+  body {
+    background-color: white;
+  }
+  
+  .pandoc-table {
+    width: 100%;
+  }
+  
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+  
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+  
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+  
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+  
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+  
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+  
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+  
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+  
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+  
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+  
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+  
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+  
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .shaded .shaded-content {
+    background: white;
+  }
+  
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+  
+  d-appendix {
+    padding-top: 30px;
+  }
+  
+  d-article>p>img {
+    width: 100%;
+  }
+  
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+  
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+  
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+  
+  /* Tweak code blocks */
+  
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+  
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+  
+  d-article div.sourceCode {
+    background-color: white;
+  }
+  
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+  
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  d-article pre a {
+    border-bottom: none;
+  }
+  
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+  
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+  
+  @media(min-width: 768px) {
+  
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+  
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+  
+  d-article pre {
+    font-size: 14px;
+  }
+  
+  }
+  
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS for d-contents */
+  
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+  
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+  
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  .d-contents li {
+    list-style-type: none
+  }
+  
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+  
+  .d-contents ul {
+    padding-left: 1em
+  }
+  
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+  
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+  
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+  
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+  
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+  
+  
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+  
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+  
+  
+  /* Figure */
+  
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+  
+  .figure img {
+    width: 100%;
+  }
+  
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+  
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+  
+  /* Citations */
+  
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+  
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+  
+  /* Citation hover box */
+  
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+  
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+  
+  
+  /* Tweak 1000px media break to show more text */
+  
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+  
+    .grid {
+      grid-column-gap: 16px;
+    }
+  
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+  
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+  
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+  
+  
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+  
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  /* Include appendix styles here so they can be overridden */
+  
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+  
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+  
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+  
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+  
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+  
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+  
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  d-appendix > * {
+    grid-column: text;
+  }
+  
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+  
+  /* Include footnote styles here so they can be overridden */
+  
+  d-footnote-list {
+    contain: layout style;
+  }
+  
+  d-footnote-list > * {
+    grid-column: text;
+  }
+  
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+  
+  
+  
+  /* Anchor.js */
+  
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  
+  /* Social footer */
+  
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+  
+  .disqus-comments {
+    margin-right: 30px;
+  }
+  
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  
+  #disqus_thread {
+    margin-top: 30px;
+  }
+  
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+  
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+  
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+  
+  
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  
+  
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+  
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+  
+  /* Styles for posts lists (not auto-injected) */
+  
+  
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+  
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+  
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+  
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+  
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+  
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+  
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+  
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+  
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+  
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+  
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+  
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+  
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .posts-list img {
+    opacity: 1;
+  }
+  
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+  
+  .posts-more {
+    clear: both;
+  }
+  
+  
+  .posts-sidebar {
+    font-size: 16px;
+  }
+  
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+  
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+  
+  .categories li>a {
+    border-bottom: none;
+  }
+  
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  
+  .categories .active {
+    font-weight: 600;
+  }
+  
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+  
+  
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+  
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+  
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+  
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+  
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+  
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+  
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+  
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+  
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+  
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+  
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+  
+  
+  
+  </style>
+  
+  <script type="application/javascript">
+  
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+  
+  // show body when load is complete
+  function on_load_complete() {
+  
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+  
+  
+    // set body to visible
+    document.body.style.visibility = 'visible';
+  
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+  
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+  
+  function init_distill() {
+  
+    init_common();
+  
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+  
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+  
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+  
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+  
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+  
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+  
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+  
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+  
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+  
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+  
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+  
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+  
+      // capture layout
+      var layout = $(this).attr('data-layout');
+  
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+  
+  
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+  
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+  
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+  
+    // load distill framework
+    load_distill_framework();
+  
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+  
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+  
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+  
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+  
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+  
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+  
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+  
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+  
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+  
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+  
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+  
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+  
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+  
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+  
+      // clear polling timer
+      clearInterval(tid);
+  
+      // show body now that everything is ready
+      on_load_complete();
+    }
+  
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+  
+  }
+  
+  function init_downlevel() {
+  
+    init_common();
+  
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+  
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+  
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+  
+    // remove toc
+    $('.d-contents').remove();
+  
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+  
+  
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+  
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+  
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+  
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+  
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+  
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+  
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+  
+    $('body').addClass('downlevel');
+  
+    on_load_complete();
+  }
+  
+  
+  function init_common() {
+  
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+  
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+  
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+  
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+  
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+  
+      }
+    });
+  
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+  
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+  
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+  
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+  
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+  
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+  
+  </script>
+  
+  <!--/radix_placeholder_distill-->
+  <script src="dataviz-makeoever-2_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="dataviz-makeoever-2_files/popper-2.6.0/popper.min.js"></script>
+  <link href="dataviz-makeoever-2_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="dataviz-makeoever-2_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="dataviz-makeoever-2_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="dataviz-makeoever-2_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="dataviz-makeoever-2_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="dataviz-makeoever-2_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="dataviz-makeoever-2_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Dataviz Makeover 2","description":"This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker","authors":[{"author":"Mei Siew Toh","authorURL":"https://www.linkedin.com/in/mei-siew-toh/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-02-17T00:00:00.000+08:00","citationText":"Toh, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Dataviz Makeover 2</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from <a href="https://github.com/YouGov-Data/covid-19-tracker" class="uri">https://github.com/YouGov-Data/covid-19-tracker</a></p></p>
+</div>
+
+<div class="d-byline">
+  Mei Siew Toh <a href="https://www.linkedin.com/in/mei-siew-toh/" class="uri">https://www.linkedin.com/in/mei-siew-toh/</a> 
+  
+<br/>02-17-2021
+</div>
+
+<div class="d-article">
+<h1 id="overview">1.0 Overview</h1>
+<p>This post is focusing on the 2 data visualization found in DataViz Makeover 2 for ISSS608 Visual Analytics and Applications. The tasks for this DataViz Makeover are as followed:</p>
+<ul>
+<li>Critic the graph on its clarity and aesthetics</li>
+<li>Suggest alternative graphical presentation to improve and provide a proposed design</li>
+<li>Design proposed data visualization using Tableau</li>
+<li>Provide Step-by-Step description of data visualization preparation</li>
+<li>Describe three major observations</li>
+</ul>
+<p>The original data visualizations are as seen below:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/1-OriginalData.jpg" /><!-- --></p>
+</div>
+<h1 id="critics">2.0 Critics</h1>
+<h2 id="clarity">2.1 Clarity</h2>
+<p><strong>Misleading Title based on only 1 survey question</strong></p>
+<p>The data used in the 1st bar chart (DataViz1) “Which country is more pro-vaccine?” is retrieved from the responses in the survey question –vac-1: “If a Covid-19 vaccine were made available to me this week, I would definitely get it”. The title is misleading, as this survey question only is unable to determine if a country is more “pro-vaccine” than others.</p>
+<p>In addition, in the 2nd bar chart(DataViz2), the title is misleading as users will assume that the survey question is “I would definitely get a vaccination” and fail to consider the context – “available to me this week”</p>
+<p><strong>Limitation in Survey Question</strong></p>
+<p>This visualization also failed to consider changes in responses week on week, as the time frame mentioned in survey question is limited “this week”. Given that updates and news on COVID-19 happen rapidly daily, survey responses can change over weeks. The graph is unable to show any trend in responses throughout the 4 weeks in January.</p>
+<p><strong>Missing data representation of uncertainty</strong></p>
+<p>DataViz2 “% of strongly agreed to vaccination” is redundant as it is a filtered version of Graph 1, showing only the percentage of population who strongly agree to survey question vac-1.Apart from arranging the countries via the country with the highest percentage of strongly agree, it does not provide any additional insights. As there can be different number of survey records per country, it does not show any error bar constructed with confidence interval. Overall, it lacks the additional input to showcase the level of uncertainty.</p>
+<p><strong>Missing timeframe in data visualization</strong></p>
+<p>The survey is done across 29 countries, with the addition of Israel in 2021. In both DataViz1 and DataViz2, only 14 countries are shortlisted and represented in the data visualization. There is no write-up or annotation to explain the reason to exclude the other 15 countries. In addition, the survey collects results weekly from 31st March 2020 to date from 2020 to 2021 and it is uncertain which time frame the visualization is based off. It was only then mentioned in the writeup that the research is based off the survey results in Jan 2021.</p>
+<p><strong>Lack of demographic details</strong></p>
+<p>Lastly, there is no demographics details to further breakdown the responses. Users can only compare results across countries but unable to compare any plausible relationship between response and attributes such as gender, age, household size.</p>
+<p><strong>Arrangement of Countries</strong></p>
+<p>Countries in DataViz1 are arranged based on alphabetical order. In the current stacked bar chart visualization, this arrangement does not bring any additional value to the users. It is hard to find the country with the highest percentage of “Strongly disagree” without scanning through the entire graph. The sorting of countries in Graph 2 is based descending order of percentage values, bringing users ‘attention to the top countries. However, it is time consuming for users to toggle between 2 graphs since the countries are arranged differently. The arrangement of both charts should be standardized.</p>
+<h2 id="aesthetics">2.2 Aesthetics</h2>
+<p><strong>Choice of Color</strong></p>
+<p>Firstly, the scale of 1 to 5 is represented by 5 different colors that are not intuitive for readers. For example, a response of “3” is neutral but represented by the color – red which typically inferred as negative. Users are required to refer to the legend, making it cumbersome to analyze the data visualization.</p>
+<p><strong>Stacked Bar Chart</strong></p>
+<p>DataViz1 is represented by a stacked bar chart to show the distribution across the 5 response. The stacked bars are all plotted from the same reference line starting from 0%. Even though users can see the weightage of each response, they are unable to compare the weightage of positive and negative responses right away. The chart itself lacks a standardized divergent point to visually interpret the distribution of positive (agreement), negative (disagreement) and neutral responses.</p>
+<p><strong>Axis and Grids</strong></p>
+<p>The vertical axis header “Country” is aligned on the right for DataViz1 but aligned to the left for DataViz2, showing inconsistencies. Both the headers “Country” and “% Strongly Agree” have the “Sort” symbol. At first look, users might think that the countries are sorted by alphabetical order. The value labels of the x-axis for DataViz2 has decimal places, which are redundant. In addition, the axis stops at 60%, whereas united kingdom has a value more than 60%, making the data visualization ugly and cluttered. There is no proper boundary between the legend and the visualization.</p>
+<h1 id="alternative-graphical-representation">3.0 Alternative Graphical Representation</h1>
+<h2 id="suggested-improvements">3.1 Suggested Improvements</h2>
+<p><strong>Additional Survey Questions</strong> <em>(Issues to Tackle: Misleading Title, Limitation in survey question)</em></p>
+<ul>
+<li>To include results of additional survey questions, with the questions as a filter</li>
+<li>Title will be referencing to the survey question instead of “Which country is more pro-vaccine?”</li>
+</ul>
+<p><strong>Error Bar on Dot Plot</strong> <em>(Issues to Tackle: Missing data representation of uncertainty)</em></p>
+<ul>
+<li>To change DataViz2 into error bar constructed using a confident interval determined by user.</li>
+</ul>
+<p><strong>Including Time Frame</strong> <em>(Issues to Tackle: Missing timeframe in data visualization)</em></p>
+<ul>
+<li>To include time frame as a filter</li>
+<li>As different countries started the survey on different weeks, the date will be used as a filter instead of week number</li>
+<li>To add an additional visualization not show the entirety of the data, to show the trend of responses over weeks.</li>
+</ul>
+<p><strong>Adding Demographics Breakdown</strong> <em>(Issues to Tackle: Lack of demographic details)</em></p>
+<ul>
+<li>To add an additional parameter – Demographics into tool tip</li>
+<li>Tool tip will be dynamic based on selection, with the option to breakdown into gender, age, household size, household children and employment status.</li>
+</ul>
+<p><strong>Consistency in Both Data Visualization</strong> <em>(Issues to Tackle: Arrangement of Countries, Axis and Grids)</em></p>
+<ul>
+<li>To keep arrangement of countries consistent by using alphabetical order for ease of comparison.</li>
+<li>To keep header alignment and axis values decimal points consistent.</li>
+<li>To space out the bars in DataViz1 and to remove “Sort” symbol in DataViz2</li>
+</ul>
+<p><strong>Building a Likert Chart</strong> <em>(Issues to Tackle: Color, Stacked Bar Chart)</em></p>
+<ul>
+<li>To change DataViz1 to a Likert Chart with the following color scale</li>
+<li>5- strongly disagree as dark red, 4 – disagree at red, 3 – Neutral as grey, 2 – Agree as blue, 1 – Strongly Agree as Dark Blue</li>
+</ul>
+<h2 id="alternative-graphical-representation-1">3.2 Alternative Graphical Representation</h2>
+<p>The draft for DataViz Makeover can be seen below, where the 2 key visualizations are i) a Likert Graph and ii) An Error Bar with dot plot.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/2-Draft.jpg" /><!-- --></p>
+</div>
+<p>The proposed data visualization is designed using Tableau and can be found <a href="https://public.tableau.com/profile/mei.siew.toh#!/vizhome/DataVizMakeover2_16135874105970/COVIDDashboard"><em>here</em></a></p>
+<h1 id="data-visualization-preparation">4.0 Data Visualization Preparation</h1>
+<h2 id="data-preparation">4.1 Data Preparation</h2>
+<p>The dataset used is obtained from Imperial College London YouGov Covid 19 Behavior Tracker Data Hub hosted at Github. The data is available at <a href="*https://github.com/YouGov-Data/covid-19-tracker"><em>https://github.com/YouGov-Data/covid-19-tracker</em></a>. A total of 29 datasets is extracted, with each dataset representing 1 country. Israel will not be part of the data preparation as it only has 1 week of data.</p>
+<p>Using “Get Data “function in excel, all the 29 datasets are merged into a single CSV file</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/3-Getdata.jpg" /><!-- --></p>
+</div>
+<p>A new column is created, containing the source of the data.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/4-Sourcedata.jpg" /><!-- --></p>
+</div>
+<p>The 1st column is renamed as “Country” and for all values under column A, “.csv” is removed. Using the new dataset, the columns selected are time of survey (endtime), demographics details: Household_Children, Age, Gender, Household size, employment_status) and survey results (vac_1, vac_2,vac2_1, vac2_2, vace2_4, vac2_6 and vac3). Only 2021 survey results are filtered and retained. Endtime is reformatted to follow the following format – MM/DD/YYYY. With these filters applied in this dataset, there are only 15 countries remaining for further exploration.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/5-Filterdata.jpg" /><!-- --></p>
+</div>
+<p>The revised datasheet is imported into Tableau for further data visualization preparation</p>
+<h2 id="data-visualization-preparation-1">4.2 Data Visualization Preparation</h2>
+<p>The data type for each column is selected correctly on Tableau.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/6-Tableau.jpg" /><!-- --></p>
+</div>
+<p>The columns representing survey questions are renamed for better references. - Vac_1 : If a Covid-19 vaccine were made available to me this week, I would definitely get it: - Vac_2_1: I am worried about getting COVID19 - Vac_2_2: I am worried about potential side effects of a COVID19 vaccine - Vac_2_3: I believe government health authorities in my country will provide me with an effective COVID19 vaccine - Vac_2_6: If I do not get a COVID19 vaccine when it is available, I will regret it - Vac_3: If a Covid-19 vaccine becomes available to me a year from now, I definitely intend to get it</p>
+<p>Using the pivot function, the dataset is transformed, with 2 new pivot field columns representing survey questions and responses.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/7-Pivot.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/8-Pivot.jpg" /><!-- --></p>
+</div>
+<p>The 2 pivot fields are renamed as “Survey Questions” and “Response”</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/9-Newdata.jpg" /><!-- --></p>
+</div>
+<p>For the column [Response], a new calculated field [Score] is created to only take into account the numerical value of the responses – i.e “1-Strongly agree” to be “1”.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/10-Score.jpg" /><!-- --></p>
+</div>
+<p>The dataset is now ready to be used for data visualization.</p>
+<h2 id="creating-a-likert-chart">4.3 Creating a Likert Chart</h2>
+<p>As mentioned in section 2 and 3, the current stacked bar chart is plotted from the same reference line and is missing a standardized divergent point to show the polarity of the responses - agreement and disagreement. Hence, a Likert chart will be more suitable to show the distribution of responses through a standardized starting point.</p>
+<p><strong>Creation of Calculated Fields</strong></p>
+<p>Before creating a likert chart, there are some calculated fields to be created.</p>
+<ol type="1">
+<li>Number of Records: 1</li>
+<li>Total Count = TOTAL(sum([Number of Records]))</li>
+<li>Percentage = SUM([Number of Records])/[Total Count]</li>
+<li>Count Negative =</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>IF  [Score]<span class="op">&gt;</span><span class="dv">3</span> then <span class="dv">1</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>ELSEIF [Score]=<span class="st"> </span><span class="dv">3</span> THEN <span class="fl">0.5</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>ELSE <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>END</span></code></pre></div>
+</div>
+<ol start="5" type="1">
+<li>Total Count Negative = Total(sum([Count Negative]))</li>
+<li>Gantt Start = -[Total Count Negative]/[Total Count]</li>
+<li>Gantt Percent = PREVIOUS_VALUE([Gantt Start])+ZN(LOOKUP([Percentage],-1))</li>
+</ol>
+<p><strong>Plotting a Likert Chart</strong></p>
+<p>[Gantt Percent] is placed on the Columns shelf and [Survey questions] is placed on the rows shelf. [Score] is dragged onto color and detail to break down the Gantt Percent values via [score] and to differentiate the different scores by colors. [Percentage] is dragged to size and [Gantt Bar] is selected as the mark type. Lastly, [Gantt Percent] is computed using score.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/11-Marks.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/12-Columns.jpg" /><!-- --></p>
+</div>
+<p><strong>Aesthetic Adjustments</strong></p>
+<p>There are responses that are “null” as the survey questions may not be applicable to certain countries. The “Null” score is excluded in the data visualization.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/13-Null.jpg" /><!-- --></p>
+</div>
+<p>The color scale is revised to be more intuitive, with the color scale mentioned in Section 3.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/15-Color.jpg" /><!-- --></p>
+</div>
+<p>A reference line of value “0” is added, to show the divergent point of responses using the mid point of neutral responses.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/16-Reference.jpg" /><!-- --></p>
+</div>
+<p>Aliases are added to extreme scores of 1 and 5 to show the value of the scores, with 1 as 1- Strongly Agree and 2- Strong Disagree</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/14-Legend.jpg" /><!-- --></p>
+</div>
+<p>For the x-axis, [Gantt Percent] is renamed to Percentage and the values on the scale are represented in percentages instead of decimal</p>
+<p>After ensuring the Likert graph is plotted accurately, [Survey Question] is replaced by [Country] in the rows section and [Survey Question] is placed as a filter.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/17-Final.jpg" /><!-- --></p>
+</div>
+<p><strong>Final Touches</strong></p>
+<p>[Survey Question] is also included dynamically as the title of the data visualization to provide more clarity to users.. Date is placed as a filter, with the range of dates limited to a week from 1st Jan to 7th Jan.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/18-Title.jpg" /><!-- --></p>
+</div>
+<p>Both the survey question and date filters are exposed to users.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/19-Final.jpg" /><!-- --></p>
+</div>
+<p>Lastly, animation is added in to see how responses change between different survey questions.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/20-Animation.jpg" /><!-- --></p>
+</div>
+<h2 id="creating-a-trend-graph">4.4 Creating a Trend Graph</h2>
+<p>The Likert Chart is duplicated into a new sheet and revised to plot a trend graph.</p>
+<p><strong>Plotting a Line Graph</strong></p>
+<p>Instead of using [Gantt Percent], [Percentage] is placed in the row shelf, computed using [Score]. [Date] is placed in the column shelf, showing the actual day.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/21-Percentage.jpg" /><!-- --></p>
+</div>
+<p>The Mark type is set to “Line”, [Score] is removed from detail and [Percentage] is removed from size.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/22-Marks.jpg" /><!-- --></p>
+</div>
+<p>Based on the trend graph, users are able to spot any spikes in extreme responses in the month of January</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/23-Graph.jpg" /><!-- --></p>
+</div>
+<p>The survey question filter is removed for this data visualization.</p>
+<h2 id="creating-demographic-breakdown-via-bar-chart">4.5 Creating Demographic Breakdown Via Bar Chart</h2>
+<p>To provide more on-demand parameters that allow users to breakdown the results, a bar graph is plotted in a new worksheet.</p>
+<p><strong>Reviewing Demographic Data</strong></p>
+<p>The demographic data points shortlisted are</p>
+<ul>
+<li>Age</li>
+<li>Gender</li>
+<li>Household Children</li>
+<li>Household Size</li>
+</ul>
+<p>For “Age”, the value ranges from 18 to 99 and hence, having 82 values for this dimension is not practical. Hence, using the “Create Group” function, a new dimension – Age (group) is created and the ages are grouped into the following: 18-24, 25-34, 35-44, 45-54, 55-64 and 65 &amp; Above.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/24-Group.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/25-Agegroup.jpg" /><!-- --></p>
+</div>
+<p>For Household Children, the values of this dimension do not match the actual number of children in the household Based on the codebook, the label “1” , represents 0 children, and label “8” represents “Prefer not to say”. A quick pivot table on the dataset will show values “0” and “7”that are not present in the codebook. To avoid confusion, the values of this dimension can be re-adjusted to reflect the exact number of children.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/26-Code.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/27-Pivot.jpg" /><!-- --></p>
+</div>
+<p>However, it will be hard to determine whether the response refers to the number of children, or the labels, which represent a different value. As such, household children will not be part of the break down.</p>
+<p>Lastly, for household size, the label and the value matches.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/28-Code.jpg" /><!-- --></p>
+</div>
+<p>For survey responses with value “8”, they are group with “8 or more’”.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/29-Pivot.jpg" /><!-- --></p>
+</div>
+<p>The new dimension is saved as “Household Number of Pax”</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/30-Group.jpg" /><!-- --></p>
+</div>
+<p>The 3 demographics – Age(Group), Gender and Household Number of Pax are all in the dimension data form.</p>
+<p><strong>Creation of Parameter- Demographic Data</strong></p>
+<p>A new parameter – Demographic Data is created, with a list of values that match the 3 dimensions.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/31-Parameter.jpg" /><!-- --></p>
+</div>
+<p><strong>Creation of Calculated field – Demographic</strong></p>
+<p>A new calculated field – Demographic is created, with the following formula</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>CASE [Demographic Data]</span>
+<span id="cb2-2"><a href="#cb2-2"></a>WHEN <span class="st">&quot;Gender&quot;</span> THEN [Gender]</span>
+<span id="cb2-3"><a href="#cb2-3"></a>WHEN <span class="st">&quot;Household Number of Pax&quot;</span> THEN [Household Number of Pax]</span>
+<span id="cb2-4"><a href="#cb2-4"></a>WHEN <span class="st">&quot;Age (group)&quot;</span> THEN [<span class="kw">Age</span> (group)]</span>
+<span id="cb2-5"><a href="#cb2-5"></a>END</span></code></pre></div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/32-Calculated.jpg" /><!-- --></p>
+</div>
+<p><strong>Plotting Demographic Breakdown Via A Bar Chart</strong></p>
+<p>[Demographic] is placed on the Columns shelf and [Percentage] is placed on the rows shelf. The paramter – [Demographic Data] is exposed.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/33-Bar.jpg" /><!-- --></p>
+</div>
+<p><strong>Aesthetic Adjustments on Bar Graph</strong></p>
+<p>The header of the columns is hidden and the title of the visualization is based on the demographic data selected.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/34-Title.jpg" /><!-- --></p>
+</div>
+<p>The axis is changed to represent percentages instead</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/35-Graph.jpg" /><!-- --></p>
+</div>
+<h2 id="creating-an-error-bar-on-a-dot-plot">4.6 Creating An Error Bar on a Dot Plot</h2>
+<p>For this data visualization, it is focusing on percentage of people who responded to “Strongly Agree” . As such, the error plot is working with confidence interval of a percentage, chosen by the user.</p>
+<p><strong>Creation of Parameter- Confidence Level</strong></p>
+<p>A new parameter – Confidence Level is created. The most common confidence levels are</p>
+<ul>
+<li>99%</li>
+<li>95%</li>
+<li>90%</li>
+</ul>
+<p>For each confidence level, the Z-score of each confidence level is recorded as Value and display as “Confidence Level”</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/36-Confidence.jpg" /><!-- --></p>
+</div>
+<p><strong>Creation of Calculated Fields</strong></p>
+<p>Before creating the error bar, there are some calculated fields to be created. 1. Count SA</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>IF  [Score] =<span class="st"> </span><span class="dv">1</span> THEN <span class="dv">1</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>ELSE <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>END</span></code></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Prop = SUM([Count SA])/SUM([Number of Records])</li>
+<li>Prop_SE = SQRT(([Prop]*(1-[Prop]))/SUM([Number of Records]))</li>
+<li>Prop_Upper Limit = [Prop]+[ConfidenceLevel]*[Prop_SE]</li>
+<li>Prop_Lower Limit = [Prop]-[ConfidenceLevel]*[Prop_SE]</li>
+</ol>
+<p><strong>Plotting an Error Bar on Dot Plot</strong></p>
+<p>[Prop] and [Mesure Values] are placed on the Columns shelf and [Country] is placed on the rows shelf. In [Measure Values], all the values are removed, with only [Prop_Lower Limit] and [Prop_Upper Limit] remaining.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/37-Plot.jpg" /><!-- --></p>
+</div>
+<p>The 2 visualisations are combined by selecting Dual Axis.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/38-Dual.jpg" /><!-- --></p>
+</div>
+<p>The axis are synchronized as well</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/39-Axis.jpg" /><!-- --></p>
+</div>
+<p><strong>Aesthetic Adjustments on Error Bar</strong></p>
+<p>For [AGG(Prop)], the mark type is changed to circle, whereas for [Measure Values], the mark type is changed to line. [Measure Names] is dragged onto detail.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/40-Marks.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/41-Marks.jpg" /><!-- --></p>
+</div>
+<p>The parameter [Confidence Level] is exposed. The top header is also removed.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/42-Graph.jpg" /><!-- --></p>
+</div>
+<p>For the x-axis, [Prop] is renamed to Percentage and the values on the scale are represented in percentages instead of decimal</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/43-Graph.jpg" /><!-- --></p>
+</div>
+<h1 id="tableau-dashboard-creation">5.0 Tableau Dashboard Creation</h1>
+<h2 id="creation-of-zoom-in-function">5.1 Creation of Zoom-in Function</h2>
+<p>To stich the likert chart, error bar and the time-series together, additional reference bands are added into the time-series chart. The time-series visualisation will serve as a slider that filter data based on the date range selected.</p>
+<p><strong>Creation of Parameters</strong></p>
+<p>The following parameters are created</p>
+<ul>
+<li>Date Slider: the entire January date range is selected, with step size of 1 day</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/44-Date.jpg" /><!-- --></p>
+</div>
+<ul>
+<li>Days: To create the range of days user will want to select. Currently, as the data used is only January, only 2 options- 7 days (1 week) and 31 days (Entire month) are created.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/45-Day.jpg" /><!-- --></p>
+</div>
+<p><strong>Creation of Calculated fields</strong></p>
+<p>The start date selected on the slider will be placed at the start of the highlighted data.The two calculated fields mark the boundary of the date range selected.</p>
+<ul>
+<li>Lower Zoom Date: DATE(DATEADD(‘day’,0,[Date Slider]))</li>
+<li>Upper Zoom Date: DATE(DATEADD(‘day’,CEILING([Days]-1),[Date Slider]))</li>
+</ul>
+<p>For both the Likert Graph and the error bar to show data filtered via the date slider, 2 binary calculated fields are created</p>
+<ul>
+<li>DATE([Date])&gt;=[Lower zoom date]</li>
+<li>DATE([Date])&lt;=[Upper zoom date]</li>
+</ul>
+<p>These 2 fields are pulled into Filters, with the “True” condition</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/46-True.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/47-True.jpg" /><!-- --></p>
+</div>
+<p><strong>Creation of Reference Line</strong></p>
+<p>Lastly, 2 reference bands are used to block out any dates that are not selected. For the first reference band, it is to block out the dates prior to the selected date range. [Lower Zoom Date] is selected as the maximum whereas [Date] is selected as the minimum.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/48-Reference.jpg" /><!-- --></p>
+</div>
+<p>For the second reference band, it blocks out the dates later than the selected date range. [Upper Zoom Date] is selected as the minimum whereas [Date] is selected as the maximum.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/49-Reference.jpg" /><!-- --></p>
+</div>
+<p>The 2 parameters are exposed in the trend graph.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/50-Parameter.jpg" /><!-- --></p>
+</div>
+<h2 id="creation-of-tool-tip-on-likert-graph">5.2 Creation of Tool-tip on Likert Graph</h2>
+<p>Going to the Likert Chart worksheet, selecting “Tooltip”, the [Demographic Data] parameter is selected, as well as the Demographic Worksheet. The parameter will serve as the header, hence centralized and in bold.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/51-Parameter.jpg" /><!-- --></p>
+</div>
+<p>By hovering over the selected responses, a user can understand the demographic breakdown of the respondents</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/52-Tooltip.jpg" /><!-- --></p>
+</div>
+<h2 id="creation-of-dashboard">5.3 Creation of Dashboard</h2>
+<p>Firstly, both the Likert Graph and trend graph are selected and pulled into the dashboard. For the filter – [Survey Questions], the filter is applied to all using related data sources.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/53-Filter.jpg" /><!-- --></p>
+</div>
+<p>The date slider of the trend graph is moved to the bottom of the trend graph. The title is also hidden for aesthetic purposes. The title of the trend grpah is hidden and the graph is resized so that it sits nicely at the bottom of the dashboard.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/54-slider.jpg" /><!-- --></p>
+</div>
+<p>The uncertainty graph is added on the right of the Likert Chart.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/55-Graph.jpg" /><!-- --></p>
+</div>
+<p>The title for the error bar is renamed to include the confidence level selected by the user and the title of the Likert Graph is also renamed for more clarity.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/56-Title.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/57-Title.jpg" /><!-- --></p>
+</div>
+<p>The Paramter [Days] are moved to be next to the slider, and renamed as “Duration (Days)” for more clarity. Header is added for this data visualization to provide more context.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/58-Header.jpg" /><!-- --></p>
+</div>
+<p>Lastly, borders and colors are added to ensure that the filter option for [Survey Questions] are easily seen by the user. The parameters – [Confidence Level] [Demographic Data] and [Duration (Days)] are added borders and shaded to show more visibility</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/59-Color.jpg" /><!-- --></p>
+</div>
+<h1 id="major-observations">6.0 Major Observations</h1>
+<p><strong>Percentage of People Who are Open to Getting a Vaccine</strong></p>
+<p>By toggling between 2 questions, people are more open to getting the vaccine after 1 year, instead of this week. Overall, the percentage of people who are highly agreeable are higher. Countries such as Australia and France show a higher percentage of people who are open to getting the vaccine in the long term but not in the short term.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight1.1.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight1.2.jpg" /><!-- --></p>
+</div>
+<p><strong>A spike in positive sentiments towards the vaccine</strong></p>
+<p>With the time slider, the user is able to see how data changes over the weeks. For the week of 9th Jan, there is a spike in percentage of strongly agreeable. This based on the Likert Graph, it is largely due to UK. This week is also the week in UK with the highest number of COVID cases. It is possible that people are more open to the vaccine due the heightened fear.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight2.jpg" /><!-- --></p>
+</div>
+<p><strong>Different sentiments across age group</strong></p>
+<p>By hovering over the bars on the Likert graph, the age distribution across the people who are highly agreeable to getting vaccine are 65 years and above. The openness of the elderly may be a result of a UK grandmother who is the first person in the world to be given the Pfizer Covid-19 jab as part of a mass vaccination programme. <a href="https://www.bbc.com/news/uk-55227325"><em>Article Link</em></a></p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight3.1.jpg" /><!-- --></p>
+</div>
+<p>For the younger age bands, they are neutral or highly disagreeable to getting a vaccine.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight3.2.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight3.3.jpg" /><!-- --></p>
+</div>
+<p><strong>Difference in Gender</strong></p>
+<p>Among all countries, on the question on “I am worried about getting COVID19”, females take up the higher proportion of respondents towards “Strongly Agree”. This is common across all the countries in the dataset, be it an Asian country or a European country.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight4-Canada.jpg" /><!-- --></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/Insight4-Japan.jpg" /><!-- --></p>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
