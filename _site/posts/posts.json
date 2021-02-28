@@ -17,6 +17,31 @@
     "input_file": {}
   },
   {
+    "path": "posts/2021-02-28-proposal/",
+    "title": "Project Proposal",
+    "description": "The Prime Crime Area Spatio-Temporal Analysis",
+    "author": [
+      {
+        "name": "GABRIELLA PAULINE DJOJOSAPUTRO",
+        "url": {}
+      },
+      {
+        "name": "TAN HUIYONG",
+        "url": {}
+      },
+      {
+        "name": "TOH MEI SIEW",
+        "url": {}
+      }
+    ],
+    "date": "2021-02-28",
+    "categories": [],
+    "contents": "\r\nContents\r\nExecutive Summary\r\nMotivation\r\nProject Objectives\r\nDatasets\r\nProposed Scope and Methodology\r\nStoryboard & Visualization Features\r\nSoftware Tools\r\nR-Packages\r\nReferences\r\nExecutive Summary\r\nBack to top\r\nDemographic, socio-economic and crime rate data of the Greater London Region, retrieved from the London Datastore, are used in this project. In this project, 3 key analysis will be performed:\r\nExploratory Data Analysis\r\nClustering analysis\r\nRegression Modeling \r\nMotivation\r\nBack to top\r\nWith the limited police resources and possible adverse impact when crime occurs, analytics on crime has been done as far back as in the 1800s (Hunt, 2019). Crime occurrence was found to have spatial patterns, and thus predictive analytics should be possible. However, mixed results were obtained in the research to determine whether predictive policing results to lower crime rates (Meijer & Wessels, 2019). Thus, it is more beneficial to use the analytics to determine areas with higher risk of crime and to discover the underlying factors to the increased risk.\r\nTraditionally, crime analysis is done manually or through a spreadsheet program (RAND Corporation, 2013). This project would give the users an easier way to do the analysis using a web application.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-02-28T22:31:45+08:00",
+    "input_file": "proposal.utf8.md"
+  },
+  {
     "path": "posts/2021-02-17-dataviz-makeoever-2/",
     "title": "Dataviz Makeover 2",
     "description": "This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker",

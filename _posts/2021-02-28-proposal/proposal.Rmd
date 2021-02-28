@@ -1,0 +1,55 @@
+---
+title: "Project Proposal"
+description: The Prime Crime Area Spatio-Temporal Analysis
+author:
+  - name: GABRIELLA PAULINE DJOJOSAPUTRO
+    affiliation: School of Information Systems, Singapore Management University
+    affiliation_url: https://smu.edu.sg
+  - name: TAN HUIYONG 
+    affiliation: School of Information Systems, Singapore Management University
+    affiliation_url: https://smu.edu.sg
+  - name: TOH MEI SIEW
+    affiliation: School of Information Systems, Singapore Management University
+    affiliation_url: https://smu.edu.sg
+
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+# Comment out the following line to turn off css
+        theme: theme.css
+spacing: single
+indent: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Contents {#top}
+- [Executive Summary](#es)
+- [Motivation](#mt)
+- [Project Objectives](#proj_obj)
+- [Datasets](#Data)
+- [Proposed Scope and Methodology](#scope)
+- [Storyboard & Visualization Features](#Story)
+- [Software Tools](#Tools)
+- [R-Packages](#Packages)
+- [References](#References)
+\
+
+## Executive Summary{#es}
+[*Back to top*](#top)
+
+Demographic, socio-economic and crime rate data of the Greater London Region, retrieved from the London Datastore, are used in this project. In this project, 3 key analysis will be performed:
+
+1. Exploratory Data Analysis
+2. Clustering analysis 
+3. Regression Modeling
+\pagebreak
+
+## Motivation{#mt}
+[*Back to top*](#top)
+
+With the limited police resources and possible adverse impact when crime occurs, analytics on crime has been done as far back as in the 1800s [(Hunt, 2019)](https://nij.ojp.gov/topics/articles/crime-mapping-crime-forecasting-evolution-place-based-policing#a-brief-history). Crime occurrence was found to have spatial patterns, and thus predictive analytics should be possible. However, mixed results were obtained in the research to determine whether predictive policing results to lower crime rates [(Meijer & Wessels, 2019)](https://www.tandfonline.com/doi/pdf/10.1080/01900692.2019.1575664?needAccess=true). Thus, it is more beneficial to use the analytics to determine areas with higher risk of crime and to discover the underlying factors to the increased risk.
+
+Traditionally, crime analysis is done manually or through a spreadsheet program [(RAND Corporation, 2013)](https://www.rand.org/content/dam/rand/pubs/research_briefs/RB9700/RB9735/RAND_RB9735.pdf). This project would give the users an easier way to do the analysis using a web application. 
