@@ -2,7 +2,7 @@
 title: "Dataviz Makeover 2"
 description: |
   This post critics and provides alternative graphical presentation by using data from Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub hosted at Github. The datasets are taken from https://github.com/YouGov-Data/covid-19-tracker
-preview: londoncovid.jpg
+preview: images/londoncovid.jpg
 author:
   - name: Mei Siew Toh
     url: https://www.linkedin.com/in/mei-siew-toh/

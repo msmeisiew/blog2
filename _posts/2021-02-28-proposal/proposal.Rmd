@@ -1,6 +1,7 @@
 ---
 title: "Project Proposal"
 description: The Prime Crime Area Spatio-Temporal Analysis
+preview: Images/london.jpg
 author:
   - name: GABRIELLA PAULINE DJOJOSAPUTRO
     affiliation: School of Information Systems, Singapore Management University
