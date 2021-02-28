@@ -10,9 +10,9 @@ navbar:
     - text: "DataViz Makeover"
       menu:
         - text: "DataViz Makeover 1"
-          href: publish_article.html
+          href: article1.html
         - text: "DataViz Makeover 2"
-          href: publish_article2.html
+          href: article2.html
     - text: "Visual Analytics Project"
       menu:
         - text: "Proposal"
