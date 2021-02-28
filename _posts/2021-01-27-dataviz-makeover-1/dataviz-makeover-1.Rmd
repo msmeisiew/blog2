@@ -2,6 +2,7 @@
 title: "DataViz Makeover 1"
 description: |
   This post critics and provides alternative graphical presentation on a data visualisation from an extract of the annual report on Singapore’s labour market by Ministry of Manpower. The datasets taken are Table 5 and table 7 from https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx
+preview: peoplesg.png
 author:
   - name: Mei Siew Toh
     url: https://www.linkedin.com/in/mei-siew-toh/
