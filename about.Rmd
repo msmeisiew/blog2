@@ -1,7 +1,7 @@
 ---
-title: "About this blog"
+title: "All About Me"
 description: |
-  Some additional details about the blog
+  I am currently a student in Singapore Management University pursuing Masters in Information Technology (Business) or MITB in short. Here is a weblog on data visualisation. Enjoy!
 ---
 
 ```{r setup, include=FALSE}

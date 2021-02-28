@@ -2,11 +2,11 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "title": "All About Me",
+      "description": "I am currently a student in Singapore Management University pursuing Masters in Information Technology (Business) or MITB in short. Here is a weblog on data visualisation. Enjoy!",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-02-28T22:56:44+08:00"
+      "last_modified": "2021-02-28T23:17:51+08:00"
     },
     {
       "path": "index.html",
