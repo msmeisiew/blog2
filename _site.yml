@@ -1,5 +1,5 @@
 name: "blog2"
-title: "Mei Siew DataViz Blog"
+title: "Mei Siew Data Viz Blog"
 description: |
   Everything on Visual Analytics
 output_dir: "_site"
@@ -14,7 +14,16 @@ navbar:
         - text: "DataViz Makeover 2"
           href: publish_article2.html
     - text: "Visual Analytics Project"
-      href: vap.html
-    - text: "About"
-      href: about.html
+      menu:
+        - text: "Proposal"
+          href: Proposal.html
+        - text: "Poster"
+          href: poster.html
+        - text: "Application"
+          href: application.html
+        - text: "Research Paper"
+          href: paper.html
+        - text: "---"
+        - text: "Application User Guide"
+          href: application_user_guide.html
 output: distill::distill_article
