@@ -26,4 +26,6 @@ navbar:
         - text: "---"
         - text: "Application User Guide"
           href: application_user_guide.html
+    - text: "About Me"
+      href: about.html
 output: distill::distill_article
