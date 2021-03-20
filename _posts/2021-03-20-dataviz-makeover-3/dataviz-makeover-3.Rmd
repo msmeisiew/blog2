@@ -17,7 +17,16 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# 1.0 Overview
+## Contents {#top}
+- [1.Overview](#over)
+- [2.Critics](#cr)
+- [3.Alternative Graphical Representation](#alt)
+- [4.Data Visualization Preparation](#data)
+- [5.Creating a DashboardProposed Scope and Methodology](#create)
+- [6. Major Observations](#major)
+
+## 1.0 Overview {#over}
+[*Back to top*](#top)
 
 This post is focusing on the 2 data visualisations found in DataViz Makeover 3 for ISSS608 Visual Analytics and Applications. The tasks for this DataViz Makeover are as followed:
 
@@ -36,9 +45,10 @@ Below is a snapshot of the original data visualisations.
 knitr::include_graphics("images/1-original.jpg")
 ``` 
 
-#  2.0 Critics 
+## 2.0 Critics{#cr}
+[*Back to top*](#top)
 
-## 2.1 Clarity
+# 2.1 Clarity
 
 **Inconsistency in y-axis Scale for Line Graph**
 
@@ -64,7 +74,7 @@ While filtering by country, there are certain years whereby a country does not h
 knitr::include_graphics("images/3-broken.jpg")
 ``` 
 
-## 2.2 Aesthetics
+# 2.2 Aesthetics
 
 **Overlapping Data Points on Geographical Map**
 
@@ -87,7 +97,7 @@ knitr::include_graphics("images/5-ink.jpg")
 
 With the legend next to the 6-line graphs, the visualizations can be clearer by keeping the colors consistent. With “Protests” represented by red, the line graph showing the number of protests should be in red as well.  
 
-## 2.3 Interactivity
+# 2.3 Interactivity
 
 **Lack of Temporal Representation on Geographical Map**
 
@@ -126,9 +136,10 @@ This visualization provides users 4 options to sort the line graphs. However, th
 knitr::include_graphics("images/10-sort.jpg")
 ``` 
 
-# 3.0 Alternative Graphical Representation 
+## 3.0 Alternative Graphical Representation {#alt}
+[*Back to top*](#top)
 
-## 3.1 Suggested Improvements
+# 3.1 Suggested Improvements
 
 **Revision of Line Graph**
 
@@ -166,7 +177,7 @@ Instead of showing event type, longitude, latitude and event id city, the follow
 
 Instead of event type, year and count, the tooltip aims to show the breakdown of events by sub event type.
 
-## 3.2 Alternative Graphical Representation
+# 3.2 Alternative Graphical Representation
 
 The draft for DataViz Makeover can be seen below, where the 2 key visualizations are i) a Geographical Map and ii) a line Graph.
 
@@ -176,23 +187,24 @@ knitr::include_graphics("images/11-draft.jpg")
 
 The proposed data visualization is designed using Tableau and can be found [*here*](https://public.tableau.com/profile/mei.siew.toh#!/vizhome/DataVizMakeover3_16162284814670/ConflictEvents)
 
-# 4.0 Data Visualization Preparation
+## 4.0 Data Visualization Preparation {#data}
+[*Back to top*](#top)
 
-## 4.1 Data Preparation
+# 4.1 Data Preparation
 
 The dataset used is obtained from The Armed Conflict Location & Event Data Project (ACLED) and available via https://acleddata.com/#/dashboard. There are a total of 9 datasets available and the dataset used is on Southeast Asia.
 
 The dataset is imported into Tableau for further data visualization preparation. Each column is examined to ensure that the data type is selected correctly on Tableau.
 
 ```{r}
-knitr::include_graphics("images/11-draft.jpg")
+knitr::include_graphics("images/11-table.jpg")
 ``` 
 
 The following column – Year has the wrong data type indicated and manually changed from number to date. In addition, the following columns are not required in this data visualisation exercise and hence hidden: *ISO, EVENT_ID_CNTY, EVENT_ID_NO_CNTY, ASSOC_ACTOR_1, ASSOC_ACTOR_2, INTER1, INTER2, INTERACTION, ADMIN2. ADMIN3, TIMESTAMP*
 
 In total, 18 columns are left to be used for the next steps in data visulisation 
 
-## 4.2 Plotting a Line Graph
+# 4.2 Plotting a Line Graph
 
 A new calculated field [Number of Event] is created with a value 1. This field will count of the number of records in the dataset. For 1 record in the dataset, it represents 1 event.
 
@@ -259,7 +271,7 @@ The final data visualisation now looks clearer with the data points marked.
 knitr::include_graphics("images/24-final.jpg")
 ``` 
 
-## 4.3 Creating a Tooltip for Line Graph - Breakdown of Sub Events
+# 4.3 Creating a Tooltip for Line Graph - Breakdown of Sub Events
 
 [Sub Event Type ] is placed on the rows shelf and [Number of Event] is placed on the columns shelf. In this case, [Total Event] is not used as we are not concerned with NULL values of sub event type. 
 
@@ -309,7 +321,7 @@ With the updated tooltip, users are able to breakdown the events into sub event 
 knitr::include_graphics("images/32-graph.jpg")
 ``` 
 
-## 4.4 Creating a Geographical Map
+# 4.4 Creating a Geographical Map
 
 [Longtitude] is placed at the column shelf whereby [Latitude] is placed at the row shelf. As there is no location name given to each pair of  longtitude and latitude, a new calculated field [Actual Location] is created by concentating the latitude and longtitude together. [ Actual Location] is then placed at the detail level. [Event Type] is placed on color. [Number of Event] is placed at size. 
 
@@ -399,7 +411,7 @@ knitr::include_graphics("images/48-header.jpg")
 knitr::include_graphics("images/49-header.jpg")
 ``` 
 
-## 4.5 Creating a Tooltip for Line Graph - Additional Information.
+# 4.5 Creating a Tooltip for Line Graph - Additional Information.
 
 The following attributes are pulled to Tooltip
 i)	Event Date
@@ -444,7 +456,8 @@ The tooltip now shows additional information that could be helpful to the user.
 knitr::include_graphics("images/55-tooltip.jpg")
 ``` 
 
-# 5.0 Creating a Dashboard
+## 5.0 Creating a Dashboard {#create}
+[*Back to top*](#top)
 
 Firstly, both the geographical map and the line graph are selected and pulled into the dashboard. The 2 filters in geographical map – [year] and [Country] are applied to all using related data sources. 
 
@@ -461,7 +474,7 @@ To create interactivity between both visualizations, the line graph is also used
 knitr::include_graphics("images/57-filter.jpg")
 ``` 
 
-## 5.1 Adding Summary Counters
+# 5.1 Adding Summary Counters
 3 additional worksheets are created to serve as Counters which summarize the entire dashboard.The 3 summary required are i)Total Events, ii) Total Fatalities, iii) Total Location
 
 In the 1st worksheet, [Number of Events] is pulled to text, showing the SUM(Number of Events). For the 2nd worksheet, it is a duplicate of worksheet  and[Number of Events] is replaced by [Fatalities]
@@ -470,7 +483,7 @@ The 3rd worksheet has [Actual Location] in replace of [Number of Events]. CNTD[A
 
 The 3 counters are placed at the right side of the geographical map on the dashboard.
 
-## 5.2 Aesthetic Adjustments on Dashboard
+# 5.2 Aesthetic Adjustments on Dashboard
 
 Formatting is done so that the customisable filters and parameters stand out and easily accessible for users. For the map, the color used for “Riots” is very similar to the map color, hence the map is changed to a grey scale instead. 
 
@@ -484,7 +497,8 @@ Lastly, the color used in the fonts and headers is all standardised.
 knitr::include_graphics("images/59-final.jpg")
 ``` 
 
-# 6.0 Major Observations
+## 6.0 Major Observations {#major}
+[*Back to top*](#top)
 
 **A Spike in Violence Against Civilians in 2016**
 
