@@ -2,6 +2,7 @@
 title: "DataViz Makeover 3"
 description: |
    This post critics and provides alternative graphical presentation by using data from Armed Conflict Location & Event Data Project (ACLED). The South-east Asia dataset is taken from https://acleddata.com/data-export-tool/.
+preview: images/cover.jpg
 author:
   - name: Mei Siew Toh
     url: https://www.linkedin.com/in/mei-siew-toh/
