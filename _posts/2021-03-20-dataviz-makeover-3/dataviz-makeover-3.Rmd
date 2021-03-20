@@ -27,7 +27,7 @@ This post is focusing on the 2 data visualisations found in DataViz Makeover 3 f
 - Describe three major observations 
 
 
-The original data visualizations can be found [*here*](*https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis). 
+The original data visualizations can be found [*here*](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis) 
 
 Below is a snapshot of the original data visualisations.
 
