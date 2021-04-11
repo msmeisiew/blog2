@@ -638,9 +638,9 @@ ggplot(data=UK_DF,  aes(y=`Crime_2017`, x=`Mean_Income_2017`)) +
            label = "Adjusted R-squared: \n 0.479", color = "skyblue4") 
 ```
 
-## 4.2 Multiple Linear Regression Model
+## 4.3 Multiple Linear Regression Model
 
-## 4.2.1 Understanding Relationships between independent variables
+### 4.3.1 Understanding Relationships between independent variables
 
 Before expanding to a multiple linear regression, it is important to check for any collinearity between variables. The code chunk below filters out all 2017 variables.
 
@@ -658,7 +658,7 @@ corrplot(cor(UK_DF_Cor), diag = FALSE, order = "AOE", method = "circle",
 
 The following variables are removed - Medium Income, Einactive Rate of Minority (Not UK) and Einactive Rate of White (UK) and Unemployment rate of Minority (Not UK) 
 
-## 4.2.2 Building a Multiple Linear Regression Method
+### 4.3.2 Building a Multiple Linear Regression Method
 
 ```{r echo=TRUE}
 model_2 <- (Crime_2017 ~  Mean_Income_2017 + Pop_sqkm_2017 + Unem_rate_2017 + 
@@ -677,7 +677,7 @@ results_3 <- lm(model_3,UK_DF)
 summary(results_3)
 ```
 
-## 4.3 Testing for spatial auto-correlation
+## 4.4 Testing for spatial auto-correlation
 
 The code chunk below shows the converting of UK data set into a SpatialPolygonDataFrame.
 
@@ -714,7 +714,7 @@ tmap_leaflet(model_3_res)
 ```
 There seems to be signs of spatial autocoreelation whereby boroughs with positive residuals are neighboring boroughs (Medina, J. & Solymosi, R., 2019) as the over-prediction (negative residuals in red) and the under-prediction (positive residuals in blue) shows a spatial patterning. Over-prediction tends to appear for the North-east boroughs whereas under-prediction tends to appear for boroughs located at the South-west.
 
-### 4.3.1 Testing Spatial AutoCorrelation with Moran's I test.
+### 4.4.1 Testing Spatial AutoCorrelation with Moran's I test.
 
 Firstly, “neighboring” polygons are defined. Neighbouring polygons refer to contiguous polygons, polygons within a certain distance band. (Gimond, M., 2019) The poly2nb function from spdep is used.
 
