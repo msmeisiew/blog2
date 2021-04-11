@@ -2,6 +2,7 @@
 title: "Analysis of Crimes in London -Geographically Weighted Regression Modelling"
 description: |
   This report is a sub-module of the bigger Shiny-based Visual Analytics Application (Shiny-VAA) project under ISSS608 Visual Analytics.
+preview: images/RValues.jpg
 author:
   - name: Mei Siew Toh
     url: https://www.linkedin.com/in/mei-siew-toh/
