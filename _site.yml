@@ -19,6 +19,8 @@ navbar:
       menu:
         - text: "Proposal"
           href: posts/2021-02-28-proposal/
+        - text: "Assignment"
+          href: test.html
         - text: "Poster"
           href: poster.html
         - text: "Application"
