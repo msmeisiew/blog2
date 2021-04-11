@@ -20,7 +20,7 @@ navbar:
         - text: "Proposal"
           href: posts/2021-02-28-proposal/
         - text: "Assignment"
-          href: test.html
+          href: posts/2021-04-12-assignment/
         - text: "Poster"
           href: poster.html
         - text: "Application"
